@@ -74,6 +74,8 @@ for wiki in new_edits.wiki.unique():
         except mwapi.errors.APIError:
             print("API error: revision " + str(row.rev_id))
             continue
+        except KeyError:
+            tempdf.at[row.Index, 'is_reverted'] = True
 
     # append to all_edits data frame
     all_edits = all_edits.append(tempdf, ignore_index=True)
