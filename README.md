@@ -7,4 +7,6 @@ This is the repository of the notebook ["Measure the impact of external automati
 ```
 Please remember to add [http proxy variables](https://wikitech.wikimedia.org/wiki/HTTP_proxy) before running the notebook. And check the `/home/<username>/external-automatic-translation/notebook_update.log` file if you run into bugs.
 
+The `toledo_pageviews oozie job` folder contains code used to update the `toledo_pageviews` table on HDFS. It filters and aggregates data from `wmf.webrequest` on a daily basis to get the pageviews from external automatic translation services. Please refer to [wikitech](https://wikitech.wikimedia.org/wiki/Analytics/Systems/Cluster/Oozie) about how to deploy an oozie job.
+
 If you have any comments or questions, please leave your feedback in the ticket: https://phabricator.wikimedia.org/T212414
