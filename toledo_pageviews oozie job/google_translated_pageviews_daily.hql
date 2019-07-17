@@ -22,7 +22,7 @@
 -- Usage:
 --     hive -f google_translated_pageviews_daily.hql
 --         -d source_table=wmf.webrequest
---         -d archive_table=chelsyx.toledo_pageviews
+--         -d archive_table=neilpquinn.toledo_pageviews
 --         -d temporary_directory=/tmp/toledo_pageviews
 --         -d year=2019
 --         -d month=3

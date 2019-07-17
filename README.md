@@ -9,4 +9,6 @@ Please remember to add [http proxy variables](https://wikitech.wikimedia.org/wik
 
 The `toledo_pageviews oozie job` folder contains code used to update the `toledo_pageviews` table on HDFS. It filters and aggregates data from `wmf.webrequest` on a daily basis to get the pageviews from external automatic translation services. Please refer to [wikitech](https://wikitech.wikimedia.org/wiki/Analytics/Systems/Cluster/Oozie) about how to deploy an oozie job.
 
+If changing ownership is needed, please see [T228195](https://phabricator.wikimedia.org/T228195) for more instructions.
+
 If you have any comments or questions, please leave your feedback in the ticket: https://phabricator.wikimedia.org/T212414

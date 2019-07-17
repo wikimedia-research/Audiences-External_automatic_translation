@@ -1,4 +1,4 @@
-#!/home/chelsyx/venv/bin/python3
+#!/home/neilpquinn-wmf/venv/bin/python3
 
 from datetime import datetime, timedelta
 from wmfdata import hive # pip install git+https://github.com/neilpquinn/wmfdata.git
@@ -52,7 +52,7 @@ query = query.format(**query_vars)
 print('Querying edits from external machinetranslation...')
 new_edits = hive.run(query)
 
-all_edits = pd.read_csv('/home/chelsyx/external-automatic-translation/external_machine_translation_edits_revert.tsv',sep='\t')
+all_edits = pd.read_csv('/home/neilpquinn-wmf/external-automatic-translation/external_machine_translation_edits_revert.tsv',sep='\t')
 all_edits = all_edits[all_edits.date < start_date.strftime("%Y-%m-%d")]
 
 # Loop through all distinct wiki and check revert
@@ -85,6 +85,6 @@ for wiki in new_edits.wiki.unique():
 
 all_edits = all_edits.sort_values('date')
 all_edits.to_csv(
-    '/home/chelsyx/external-automatic-translation/external_machine_translation_edits_revert.tsv',
+    '/home/neilpquinn-wmf/external-automatic-translation/external_machine_translation_edits_revert.tsv',
     sep='\t',
     index=False)

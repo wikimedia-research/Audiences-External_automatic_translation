@@ -1,4 +1,4 @@
-#!/home/chelsyx/venv/bin/python3
+#!/home/neilpquinn-wmf/venv/bin/python3
 
 import json
 import requests
