@@ -23,7 +23,7 @@
 --     hive -f google_translated_pageviews_daily.hql
 --         -d source_table=wmf.webrequest
 --         -d archive_table=neilpquinn.toledo_pageviews
---         -d temporary_directory=/tmp/toledo_pageviews
+--         -d temporary_directory=/tmp/neilpquinn-wmf_toledo_pageviews
 --         -d year=2019
 --         -d month=3
 --         -d day=1
