@@ -52,7 +52,7 @@ query = query.format(**query_vars)
 print('Querying edits from external machinetranslation...')
 new_edits = hive.run(query)
 
-all_edits = pd.read_csv('/home/neilpquinn-wmf/external-automatic-translation/external_machine_translation_edits_revert.tsv',sep='\t')
+all_edits = pd.read_csv('/home/neilpquinn-wmf/proj/external-automatic-translation/external_machine_translation_edits_revert.tsv',sep='\t')
 all_edits = all_edits[all_edits.date < start_date.strftime("%Y-%m-%d")]
 
 # Loop through all distinct wiki and check revert
@@ -67,7 +67,7 @@ for wiki in new_edits.wiki.unique():
     tempdf['is_reverted'] = None
 
     api_session = mwapi.Session(active_wikis.url[active_wikis.dbname == wiki].to_string(
-        index=False), user_agent="Revert detection <cxie@wikimedia.org>")
+        index=False), user_agent="Revert detection <nshahquinn@wikimedia.org>")
     for row in tempdf.itertuples():
         try:
             tempdf.at[row.Index, 'is_reverted'] = check_reverted_api(api_session, row.rev_id, row.page_id)
@@ -85,6 +85,6 @@ for wiki in new_edits.wiki.unique():
 
 all_edits = all_edits.sort_values('date')
 all_edits.to_csv(
-    '/home/neilpquinn-wmf/external-automatic-translation/external_machine_translation_edits_revert.tsv',
+    '/home/neilpquinn-wmf/proj/external-automatic-translation/external_machine_translation_edits_revert.tsv',
     sep='\t',
     index=False)
