@@ -1,5 +1,4 @@
 *.tsv
-*.html
 *.log
 .ipynb_checkpoints/
 __pycache__/
